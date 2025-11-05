@@ -32,10 +32,6 @@ PerpustakaanApp/
 │   ├── kembali_view.py      # pengembalian
 │   └── laporan_view.py      # laporan
 │
-├── utils/
-│   ├── helpers.py           # fungsi bantu seperti tanggal, pesan, validasi
-│   └── constants.py         # variabel global (misal denda_per_hari = 1000)
-│
 └── data/
     └── library.db           # file database SQLite
 ```
@@ -44,13 +40,13 @@ PerpustakaanApp/
 
 ## 📋 Pembagian Tugas yang Gampang Dipahami
 
-| Anggota                          | Tugas Utama                                        | File Fokus                                                              | Keterangan                                  |
-| -------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------- |
-| **1. Backend (Database)**        | Buat dan kelola tabel SQLite                       | `database/db.py`, `models/*.py`                                         | Buat fungsi tambah, hapus, edit, ambil data |
-| **2. GUI Login & Menu Utama**    | Halaman login dan dashboard admin/mahasiswa        | `views/login_view.py`, `views/admin_view.py`, `views/mahasiswa_view.py` | Setelah login, arahkan sesuai role          |
-| **3. CRUD Buku & Mahasiswa**     | Form tambah, edit, hapus buku dan mahasiswa        | `views/buku_view.py`, `views/mhs_view.py`                               | Gunakan `Treeview` Tkinter                  |
-| **4. Peminjaman & Pengembalian** | Fitur pinjam & kembalikan buku                     | `views/pinjam_view.py`, `views/kembali_view.py`                         | Kurangi/tambah stok otomatis, hitung denda  |
-| **5. Laporan & Dokumentasi**     | Tampilan laporan & ekspor data, dokumentasi README | `views/laporan_view.py`, `README.md`                                    | Menampilkan semua transaksi dan denda       |
+| Anggota                           | Tugas Utama                                        | File Fokus                                                              | Keterangan                                  |
+| --------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------------- | ------------------------------------------- |
+| **1. Backend (Database)**         | Buat dan kelola tabel SQLite                       | `database/db.py`, `models/*.py`                                         | Buat fungsi tambah, hapus, edit, ambil data |
+| **2. GUI Login & Menu Utama**     | Halaman login dan dashboard admin/mahasiswa        | `views/login_view.py`, `views/admin_view.py`, `views/mahasiswa_view.py` | Setelah login, arahkan sesuai role          |
+| **3. CRUD Buku & Mahasiswa**      | Form tambah, edit, hapus buku dan mahasiswa        | `views/buku_view.py`, `views/mhs_view.py`                               | Gunakan `Treeview` Tkinter                  |
+| **4. Peminjaman & Pengembalian**  | Fitur pinjam & kembalikan buku                     | `views/pinjam_view.py`, `views/kembali_view.py`                         | Kurangi/tambah stok otomatis, hitung denda  |
+| **5. Laporan & Dokumentasi(Eka)** | Tampilan laporan & ekspor data, dokumentasi README | `views/laporan_view.py`, `README.md`                                    | Menampilkan semua transaksi dan denda       |
 
 ---
 
