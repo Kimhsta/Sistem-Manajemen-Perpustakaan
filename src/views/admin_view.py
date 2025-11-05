@@ -2,6 +2,8 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from database.db import get_conn
+from views.buku_view import BooksView
+from views.mhs_view import StudentsView
 
 class AdminView(tk.Frame):
     def __init__(self, app, **kwargs):
@@ -41,8 +43,8 @@ class AdminView(tk.Frame):
         for i in range(3):
             nav.columnconfigure(i, weight=1)
 
-        ttk.Button(nav, text="Kelola Buku (CRUD)", command=self._todo).grid(row=0, column=0, sticky="ew", padx=8, pady=4)
-        ttk.Button(nav, text="Kelola Mahasiswa (CRUD)", command=self._todo).grid(row=0, column=1, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Kelola Buku (CRUD)", command=lambda: self.app.show(BooksView)).grid(...)
+        ttk.Button(nav, text="Kelola Mahasiswa (CRUD)", command=lambda: self.app.show(StudentsView)).grid(...)
         ttk.Button(nav, text="Peminjaman", command=self._todo).grid(row=1, column=0, sticky="ew", padx=8, pady=4)
         ttk.Button(nav, text="Pengembalian", command=self._todo).grid(row=1, column=1, sticky="ew", padx=8, pady=4)
         ttk.Button(nav, text="Laporan", command=self._todo).grid(row=1, column=2, sticky="ew", padx=8, pady=4)
