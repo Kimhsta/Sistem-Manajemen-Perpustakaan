@@ -7,6 +7,7 @@ from views.buku_view import BooksView
 from views.mhs_view import StudentsView
 from views.pinjam_view import PinjamView
 from views.kembali_view import KembaliView
+from views.laporan_view import LaporanView
 
 class AdminView(tk.Frame):
     def __init__(self, app, **kwargs):
@@ -55,7 +56,7 @@ class AdminView(tk.Frame):
         ttk.Button(nav, text="Pengembalian",
                     command=lambda: self.app.show(KembaliView)).grid(row=1, column=1, sticky="ew", padx=8, pady=4)
         ttk.Button(nav, text="Laporan",
-                    command=self._todo).grid(row=1, column=2, sticky="ew", padx=8, pady=4)
+                    command=lambda: self.app.show(LaporanView)).grid(row=1, column=2, sticky="ew", padx=8, pady=4)
 
     def _load_summary(self):
         with get_conn() as conn:
