@@ -3,6 +3,8 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 from models.loan_model import LoanModel
 from database.db import get_conn
+from views.pinjam_view import PinjamView
+from views.kembali_view import KembaliView
 
 class MahasiswaView(tk.Frame):
     def __init__(self, app, nim: str, **kwargs):
@@ -40,9 +42,10 @@ class MahasiswaView(tk.Frame):
         nav.grid(row=2, column=0, sticky="ew", padx=16, pady=(0, 8))
         nav.columnconfigure(0, weight=1)
         nav.columnconfigure(1, weight=1)
-        ttk.Button(nav, text="Pinjam Buku", command=self._coming).grid(row=0, column=0, sticky="ew", padx=8, pady=4)
-        ttk.Button(nav, text="Kembalikan Buku", command=self._coming).grid(row=0, column=1, sticky="ew", padx=8, pady=4)
-
+        ttk.Button(nav, text="Pinjam Buku",
+                    command=lambda: self.app.show(PinjamView)).grid(row=0, column=0, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Kembalikan Buku",
+                    command=lambda: self.app.show(KembaliView)).grid(row=0, column=1, sticky="ew", padx=8, pady=4)
         # Pinjaman aktif
         frame_tbl = ttk.LabelFrame(self, text="Pinjaman Aktif", padding=16)
         frame_tbl.grid(row=3, column=0, sticky="nsew", padx=16, pady=(0, 16))

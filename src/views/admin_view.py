@@ -2,8 +2,11 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 from database.db import get_conn
+# Import di atas agar tidak circular ketika show()
 from views.buku_view import BooksView
 from views.mhs_view import StudentsView
+from views.pinjam_view import PinjamView
+from views.kembali_view import KembaliView
 
 class AdminView(tk.Frame):
     def __init__(self, app, **kwargs):
@@ -37,17 +40,22 @@ class AdminView(tk.Frame):
         self.lbl_telat = ttk.Label(summary, text="Terlambat: -")
         self.lbl_telat.grid(row=0, column=3, sticky="w")
 
-        # Navigasi cepat (placeholder – nanti hubungkan ke view CRUD/Transaksi/Laporan)
+        # Navigasi
         nav = ttk.LabelFrame(self, text="Navigasi", padding=16)
         nav.grid(row=2, column=0, sticky="ew", padx=16, pady=(0, 16))
         for i in range(3):
             nav.columnconfigure(i, weight=1)
 
-        ttk.Button(nav, text="Kelola Buku (CRUD)", command=lambda: self.app.show(BooksView)).grid(...)
-        ttk.Button(nav, text="Kelola Mahasiswa (CRUD)", command=lambda: self.app.show(StudentsView)).grid(...)
-        ttk.Button(nav, text="Peminjaman", command=self._todo).grid(row=1, column=0, sticky="ew", padx=8, pady=4)
-        ttk.Button(nav, text="Pengembalian", command=self._todo).grid(row=1, column=1, sticky="ew", padx=8, pady=4)
-        ttk.Button(nav, text="Laporan", command=self._todo).grid(row=1, column=2, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Kelola Buku (CRUD)",
+                    command=lambda: self.app.show(BooksView)).grid(row=0, column=0, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Kelola Mahasiswa (CRUD)",
+                    command=lambda: self.app.show(StudentsView)).grid(row=0, column=1, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Peminjaman",
+                    command=lambda: self.app.show(PinjamView)).grid(row=1, column=0, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Pengembalian",
+                    command=lambda: self.app.show(KembaliView)).grid(row=1, column=1, sticky="ew", padx=8, pady=4)
+        ttk.Button(nav, text="Laporan",
+                    command=self._todo).grid(row=1, column=2, sticky="ew", padx=8, pady=4)
 
     def _load_summary(self):
         with get_conn() as conn:
@@ -62,7 +70,7 @@ class AdminView(tk.Frame):
             cur.execute("SELECT COUNT(*) AS n FROM loans WHERE return_date IS NULL")
             aktif = (cur.fetchone() or {"n": 0})["n"]
 
-            # telat (due_date < today AND return_date NULL)
+            # telat
             cur.execute("""
                 SELECT COUNT(*) AS n
                 FROM loans
@@ -77,7 +85,7 @@ class AdminView(tk.Frame):
         self.lbl_telat.config(text=f"Terlambat: {telat}")
 
     def _todo(self):
-        messagebox.showinfo("Info", "Halaman ini akan dihubungkan ke modul terkait (coming soon).")
+        messagebox.showinfo("Info", "Laporan akan ditambahkan nanti.")
 
     def _logout(self):
         self.app.session = {}
