@@ -1,0 +1,10 @@
+# ==== Core Library ====
+tk               # GUI Tkinter (biasanya sudah bawaan Python)
+openpyxl==3.1.5  # untuk ekspor laporan ke Excel
+
+# ==== Build Tools ====
+pyinstaller==6.11.0  # untuk compile jadi .exe / binary
+
+# ==== (Opsional) Quality / Dev ====
+# pytest==8.3.3       # kalau nanti mau testing otomatis
+
