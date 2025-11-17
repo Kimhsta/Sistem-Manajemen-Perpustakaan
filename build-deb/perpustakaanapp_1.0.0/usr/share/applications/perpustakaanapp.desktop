@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Perpustakaan App
+Comment=Sistem Manajemen Perpustakaan
+Exec=perpustakaanapp
+Icon=perpustakaanapp
+Terminal=false
+Categories=Education;Office;

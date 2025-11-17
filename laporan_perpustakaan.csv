@@ -1,0 +1,8 @@
+id,nim,nama,kode_buku,judul,qty,loan_date,due_date,return_date,total_fine
+7,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-13,2025-11-20,2025-11-13,0
+6,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-13,2025-11-20,2025-11-13,0
+5,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-12,2025-11-19,2025-11-12,0
+4,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-12,2025-11-19,2025-11-12,0
+3,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-12,2025-11-19,2025-11-12,0
+2,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-10,2025-11-17,2025-11-10,0
+1,230103001,Budi,BK-001,Algoritma Dasar,1,2025-11-10,2025-11-17,2025-11-10,0

@@ -1,0 +1,9 @@
+Package: perpustakaanapp
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: amd64
+Maintainer: Nama Kamu <email@example.com>
+Description: Sistem Manajemen Perpustakaan (Python + Tkinter + SQLite)
+ Aplikasi desktop untuk mengelola buku, mahasiswa, peminjaman,
+ pengembalian, dan laporan denda.
